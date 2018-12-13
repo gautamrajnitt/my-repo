@@ -7,8 +7,10 @@
 	<title>Team IMMP</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
+
 	<!-- css -->
-	<link href="{% static 'IMMP/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link href="{% static 'IMMP/css/bootstrap-min.css' %}" rel="stylesheet" type="text/css">
 	<link href="{% static 'IMMP/css/fancybox/jquery-fancybox.css' %}" rel="stylesheet" type="text/css">
 	<link href="{% static 'IMMP/css/jcarousel.css' %}" rel="stylesheet" type="text/css">
 	<link href="{% static 'IMMP/css/flexslider.css' %}" rel="stylesheet" type="text/css" >
@@ -16,6 +18,8 @@
 	
 	<!-- Theme skin -->
 	<link href="{% static 'IMMP/skins/default.css' %}" rel="stylesheet" type="text/css">
+
+	<!-- Login form -->
 
 
 </head>
@@ -33,24 +37,25 @@
                         <span class="icon-bar"></span>
 						</button>
 						<img style="float: left;" src="{% static 'IMMP/img/zest.JPG' %}">
-						<a class="navbar-brand" href="index.html">Zest Smart Solutions Pvt. Ltd.<br>
-						<p><span style="font-size: 15px;">DIPP Startup Certificate Recognition No:DIPP552</span></p></a>
+						<a class="navbar-brand" href="index">Zest Smart Solutions Pvt. Ltd.<br>
+							<p><span style="font-size: 15px;">DIPP Startup Certificate Recognition No:DIPP552</span></p>
+						</a>
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="index">Home</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">About Us <b class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="team.html">Team</a></li>
-									<li><a href="contact.html">Contact Us</a></li>
-									<li><a href="faq.html">FAQ</a></li>
+									<li><a href="team">Team</a></li>
+									<li><a href="contact">Contact Us</a></li>
+									<li><a href="faq">FAQ</a></li>
 								</ul>
 							</li>
-							<li><a href="projects.html">Projects</a></li>
-							<li><a href="members.html">Members</a></li>
-							<li><a href="login.html">Log In</a></li>
-							<li><a href="signup.html">Sign Up</a></li>
+							<li><a href="projects">Projects</a></li>
+							<li><a href="members">Members</a></li>
+							<li><a href="/accounts/login">Log In</a></li>
+							<li><a href="/signup">Sign Up</a></li>
 						</ul>
 					</div>
 				</div>
@@ -58,21 +63,49 @@
 		</header>
 		<!-- end header -->
 		<section id="featured">
-			  <!-- Any photo -->
-		</section>
-		<section class="callaction">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="big-cta">
-							<div class="cta-text">
-								<h2><span>Team IMMP</span></h2>
-								<h3>Idea:Market Research:MVP:Pitch</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		
+								<div class="w3-content w3-display-container">
+
+									<div class="w3-display-container mySlides">
+									<img src="{% static 'IMMP/img/slides/1.jpg' %}" style="width:100%">
+									<div class="w3-display-middle w3-large w3-container w3-padding-16">
+											<div class="cta-text">
+													<h2><span>Team IMMP</span></h2>
+													<br><h3>Idea:Market Research:MVP:Pitch</h3><br>
+													<button class="postproject">Post Project</button>
+											</div>
+									</div>
+									</div>
+									
+									<div class="w3-display-container mySlides">
+									<img src="{% static 'IMMP/img/slides/2.jpg' %}" style="width:100%">
+									<div class="w3-display-middle w3-large w3-container w3-padding-16 ">
+										<div class="cta-text">
+											<h2>A dedicated product development platform</h2>
+											<br><h3>Find:Assign:Build:Manage:Test:Launch:Scale Up</h4><br>
+											<button class="postproject">Post Project</button>
+									</div>
+									</div>
+									</div>
+									
+									<div class="w3-display-container mySlides">
+									<img src="{% static 'IMMP/img/slides/3.jpg' %}" style="width:100%">
+									<div class="w3-display-middle w3-large w3-container w3-padding-16">
+										<div class="cta-text">
+											<h2>Let's Build!</h2>
+											<br>
+											<button class="postproject">Post Project</button>
+									</div>
+									</div>
+									</div>
+									
+									<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+									<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+								</div>
+							
+					
+			</div>						
 		</section>
 		<section id="content">
 			<div class="container">
@@ -87,12 +120,12 @@
 											<i class="fa fa-desktop fa-3x"></i>
 										</div>
 										<p>
-											Have an Idea? Share with team IMMP and get a good team to work with.
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 										</p>
 
 									</div>
 									<div class="box-bottom">
-										<a href="#">Share your idea</a>
+										<a href="#">Step 1</a>
 									</div>
 								</div>
 							</div>
@@ -104,12 +137,12 @@
 											<i class="fa fa-pagelines fa-3x"></i>
 										</div>
 										<p>
-											Market research is an important aspect in the completion of any product. It gives you the data.
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 										</p>
 
 									</div>
 									<div class="box-bottom">
-										<a href="#">Know Market Reseach</a>
+										<a href="#">Step 2</a>
 									</div>
 								</div>
 							</div>
@@ -121,12 +154,12 @@
 											<i class="fa fa-edit fa-3x"></i>
 										</div>
 										<p>
-											Based on Steve Blank's theory of Lean Startup, MVP approach is a very good way of starting your entrepreneurial journey.
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 										</p>
 
 									</div>
 									<div class="box-bottom">
-										<a href="#">Know more about MVP</a>
+										<a href="#">Step 3</a>
 									</div>
 								</div>
 							</div>
@@ -138,12 +171,12 @@
 											<i class="fa fa-code fa-3x"></i>
 										</div>
 										<p>
-											Pitching is how you present your idea in front of investors, Incubators, Ventures and most importantly public.
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 										</p>
 
 									</div>
 									<div class="box-bottom">
-										<a href="#">See Pitchings</a>
+										<a href="#">Step 4</a>
 									</div>
 								</div>
 							</div>
@@ -220,18 +253,73 @@
 			</div>
 		</section>
 		<footer>
-
+			<p style="text-align: center; margin: -10px;">Work in progress</p>
 		</footer>
 	</div>
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 	<!-- javascript
-    ================================================== -->
+	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
+	
+	<script>
+		var myIndex = 0;
+		carousel();
 		
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+			   x[i].style.display = "none";  
+			}
+			myIndex++;
+			if (myIndex > x.length) {myIndex = 1}    
+			x[myIndex-1].style.display = "block";  
+			setTimeout(carousel, 3500); // Change image every 2 seconds
+		}
+		
+		var slideIndex = 1;
+		showDivs(slideIndex);
+		
+		function plusDivs(n) {
+		  showDivs(slideIndex += n);
+		}
+		
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  if (n > x.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+			 x[i].style.display = "none";  
+		  }
+		  x[slideIndex-1].style.display = "block";  
+		}
+	</script>
+
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+			
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Login</h4>
+				</div>
+				<div class="modal-body">
+						<form method="post">
+							{% csrf_token %}
+							{{ from.as_p }}
+						</form>
+				</div>
+			</div>
+			
+			</div>
+		</div>
 
 	<script src="{% static 'IMMP/js/jquery.js' %}"></script>
 	<script src="{% static 'IMMP/js/jquery_easing.js' %}"></script>
-	<script src="{% static 'IMMP/js/flexslider/jquery-flexslider.js' %}"></script>
+	<!-- <script src="{% static 'IMMP/js/flexslider/jquery-flexslider.js' %}"></script> -->
 	<script src="{% static 'IMMP/js/bootstrap-min.js' %}"></script>
 	<script src="{% static 'IMMP/js/jquery-fancybox.pack.js' %}"></script>
 	<script src="{% static 'IMMP/js/jquery-fancybox-media.js' %}"></script>

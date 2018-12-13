@@ -1,0 +1,14 @@
+{% extends 'IMMP/base.html' %}
+
+{% block content %}
+<section id="featured">
+	<div class="container">
+		<h2>Log In</h2>
+		<form method="post">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button type="submit">Log In</button>
+		</form>
+	</div>
+</section>
+{% endblock %}

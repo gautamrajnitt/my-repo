@@ -26,7 +26,7 @@ body {
 	font-size:14px;
 	font-weight:300;
 	line-height:1.6em;
-	color:#656565;
+	color:#575555;
 }
 
 a:active {
@@ -57,7 +57,7 @@ h1,h2, h3, h4, h5, h6 {
 #wrapper{
 	width:100%;
 	margin:0;	
-	padding:0;
+	padding-top:20px;
 }
 
 
@@ -118,7 +118,7 @@ header .navbar {
     color: #222;
     font-size: 24px;
     font-weight: 500;
-    line-height: 1em;
+    line-height: 0.7em;
 	letter-spacing: -1px;
     margin-top: 30px;
     padding: 0 0 0 15px;
@@ -312,20 +312,36 @@ ul.nav li.dropdown a {
 ==================================== */
  #featured{
 	width: 100%;
-	background:#fcfcfc;
+	background:#dddddd;
 	position:relative;
-	margin:20px;
+	margin:0;
+	padding-bottom:0px;
 } 
 
 /* ===================================
 6. Sliders
 ==================================== */
 /* --- flexslider --- */
+ #featured .flexslider{
+	padding: 0;
+	margin: 50px 0 30px; 
+	background: rgb(255, 255, 255); 
+	position: relative; 
+	transform: scale(1);
+} 
+
+.mySlides {display:none;}
+
+.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.flex-caption { bottom: 35px; background-color: rgba(0, 0, 0, 0.8); color: #fff; margin: 0; padding: 25px 25px 25px 30px; position: absolute; right: 45px; width: 295px;}
+.flex-caption h3 {color: #fff; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;}
+.flex-caption p {margin: 0 0 15px;}
+
 #newproject{
 	float: right;
 }
 
-#newproject {
+.postproject {
 	background-color: rgb(43, 64, 255); /* Green */
 	border: none;
 	border-radius: 8px;
@@ -369,6 +385,8 @@ section.callaction {
 .cta-text {
 	text-align: center;
 	margin-top:10px;
+	background-color: rgba(207,205,205,0.5);
+	border-radius:0.8em;
 }
 
 
@@ -1842,6 +1860,7 @@ article img.pull-right, article .align-right{
 	}
 	.navbar-header {
 		margin-top: 20px;
+		padding-bottom: 10px
 		border-bottom: none;
 	}
 	
@@ -1954,6 +1973,26 @@ article img.pull-right, article .align-right{
 
 }
 
+@media(max-width: 520px){
+	.cta-text h2,h3 {
+		font-size: 12px;
+		margin: -4px;
+	}
+
+	.postproject {
+		background-color: rgb(43, 64, 255); /* Green */
+		border: none;
+		border-radius: 8px;
+		color: white;
+		padding: 2px 2px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 10px;
+		margin-right: 2px
+	  }
+}
+
 @media (max-width: 480px) {
 	.bottom-article a.pull-right {
 		float:left;
@@ -1969,11 +2008,24 @@ article img.pull-right, article .align-right{
 		display:none;
 	}
 
-
-	.cta-text {
-		margin:0 auto;
-		text-align:center;	
+	.cta-text h2,h3 {
+		font-size: 12px;
+		margin: -4px;
 	}
+
+	.postproject {
+		background-color: rgb(43, 64, 255); /* Green */
+		border: none;
+		border-radius: 8px;
+		color: white;
+		padding: 2px 2px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 10px;
+		margin-right: 2px
+	  }
+	
 	
 	ul.portfolio li article a i{
 		width:20px;
@@ -1985,5 +2037,12 @@ article img.pull-right, article .align-right{
 }
 
 @media (max-width: 360px) {
+	.navbar-brand{
+		font-size: 20px;
+	}
+	.cta-text h2,h3 {
+		font-size: 12px;
+		margin: -7px;
+	}
 
 }

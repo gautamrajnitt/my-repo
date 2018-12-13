@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 
+from IMMP import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('IMMP.urls')),
     path('index.html', include('IMMP.urls')),
-    path('projects.html', include('IMMP.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
