@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
-
 from IMMP import views
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('IMMP.urls')),
+    path('admin/', admin.site.urls),    
     path('index.html', include('IMMP.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('dashboard/', include('app.urls')),
+    path('', include('IMMP.urls')),
+    
 ]

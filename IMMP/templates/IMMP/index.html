@@ -15,7 +15,7 @@
 	<link href="{% static 'IMMP/css/jcarousel.css' %}" rel="stylesheet" type="text/css">
 	<link href="{% static 'IMMP/css/flexslider.css' %}" rel="stylesheet" type="text/css" >
 	<link href="{% static 'IMMP/css/style.css' %}" rel="stylesheet" type="text/css">
-	
+
 	<!-- Theme skin -->
 	<link href="{% static 'IMMP/skins/default.css' %}" rel="stylesheet" type="text/css">
 
@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
 						</button>
-						<img style="float: left;" src="{% static 'IMMP/img/zest.JPG' %}">
+						<img style="float: left;" src="{% static 'IMMP/img/zest.jpg' %}">
 						<a class="navbar-brand" href="index">Zest Smart Solutions Pvt. Ltd.<br>
 							<p><span style="font-size: 15px;">DIPP Startup Certificate Recognition No:DIPP552</span></p>
 						</a>
@@ -52,8 +52,13 @@
 							</li>
 							<li><a href="projects">Projects</a></li>
 							<li><a href="members">Members</a></li>
-							<li><a href="/accounts/login">Log In</a></li>
-							<li><a href="/signup">Sign Up</a></li>
+							{% if user.is_authenticated %}
+							    <li><a href="/accounts/logout">Log out</a></li>
+							    <li><a href="/dashboard">Dashboard</a></li>
+							{% else %}
+							    <li><a href="/accounts/login">Log In</a></li>
+							    <li><a href="/signup">Sign Up</a></li>
+							{% endif %}
 						</ul>
 					</div>
 				</div>
@@ -62,48 +67,48 @@
 		<!-- end header -->
 		<section id="featured">
 			<div class="container">
-		
+
 								<div class="w3-content w3-display-container">
 
 									<div class="w3-display-container mySlides">
 									<img src="{% static 'IMMP/img/slides/1.jpg' %}" style="width:100%">
 									<div class="w3-display-middle w3-large w3-container w3-padding-16">
 											<div class="cta-text">
-													<h2><span>Team IMMP</span></h2>
-													<br><h3>Idea:Market Research:MVP:Pitch</h3><br>
-													<button class="postproject">Post Project</button>
+													<!-- <h2><span>Team IMMP</span></h2>
+													<br><h3>Idea:Market Research:MVP:Pitch</h3><br> -->
+													<button class="postproject"><a href="/dashboard/upload_project">Post Project</a></button>
 											</div>
 									</div>
 									</div>
-									
+
 									<div class="w3-display-container mySlides">
 									<img src="{% static 'IMMP/img/slides/2.jpg' %}" style="width:100%">
 									<div class="w3-display-middle w3-large w3-container w3-padding-16 ">
 										<div class="cta-text">
-											<h2>A dedicated product development platform</h2>
-											<br><h3>Find:Assign:Build:Manage:Test:Launch:Scale Up</h4><br>
-											<button class="postproject">Post Project</button>
+											<!-- <h2>A dedicated product development platform</h2>
+											<br><h3>Find:Assign:Build:Manage:Test:Launch:Scale Up</h4> -->
+											<button class="postproject"><a href="/dashboard/upload_project">Post Project</a></button>
 									</div>
 									</div>
 									</div>
-									
+
 									<div class="w3-display-container mySlides">
 									<img src="{% static 'IMMP/img/slides/3.jpg' %}" style="width:100%">
 									<div class="w3-display-middle w3-large w3-container w3-padding-16">
 										<div class="cta-text">
-											<h2>Let's Build!</h2>
-											<br>
-											<button class="postproject">Post Project</button>
+											<!-- <h2>Let's Build!</h2><br>
+											<h3>A good team makes the work easy!</h3><br> -->
+											<button class="postproject"><a href="/dashboard/upload_project">Post Project</a></button>
 									</div>
 									</div>
 									</div>
-									
+
 									<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
 									<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
 								</div>
-							
-					
-			</div>						
+
+
+			</div>
 		</section>
 		<section id="content">
 			<div class="container">
@@ -118,7 +123,7 @@
 											<i class="fa fa-desktop fa-3x"></i>
 										</div>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 										</p>
 
 									</div>
@@ -258,46 +263,46 @@
 	<!-- javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	
+
 	<script>
 		var myIndex = 0;
 		carousel();
-		
+
 		function carousel() {
 			var i;
 			var x = document.getElementsByClassName("mySlides");
 			for (i = 0; i < x.length; i++) {
-			   x[i].style.display = "none";  
+			   x[i].style.display = "none";
 			}
 			myIndex++;
-			if (myIndex > x.length) {myIndex = 1}    
-			x[myIndex-1].style.display = "block";  
+			if (myIndex > x.length) {myIndex = 1}
+			x[myIndex-1].style.display = "block";
 			setTimeout(carousel, 3500); // Change image every 2 seconds
 		}
-		
+
 		var slideIndex = 1;
 		showDivs(slideIndex);
-		
+
 		function plusDivs(n) {
 		  showDivs(slideIndex += n);
 		}
-		
+
 		function showDivs(n) {
 		  var i;
 		  var x = document.getElementsByClassName("mySlides");
-		  if (n > x.length) {slideIndex = 1}    
+		  if (n > x.length) {slideIndex = 1}
 		  if (n < 1) {slideIndex = x.length}
 		  for (i = 0; i < x.length; i++) {
-			 x[i].style.display = "none";  
+			 x[i].style.display = "none";
 		  }
-		  x[slideIndex-1].style.display = "block";  
+		  x[slideIndex-1].style.display = "block";
 		}
 	</script>
 
 	  <!-- Modal -->
 	  <div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
-			
+
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
@@ -311,7 +316,7 @@
 						</form>
 				</div>
 			</div>
-			
+
 			</div>
 		</div>
 
