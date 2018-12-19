@@ -1,5 +1,330 @@
-{% extends 'IMMP/base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-<h1>Dummy projects here.</h1>
-{% endblock %}
+<head>
+	<meta charset="utf-8">
+	<title>Projects</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<!-- css -->
+    <link href="{% static 'IMMP/css/bootstrap-min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'IMMP/css/fancybox/jquery-fancybox.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'IMMP/css/jcarousel.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'IMMP/css/flexslider.css' %}" rel="stylesheet" type="text/css" >
+	<link href="{% static 'IMMP/css/style.css' %}" rel="stylesheet" type="text/css">
+
+
+	<!-- Theme skin -->
+	<link href="{% static 'IMMP/skins/default.css' %}" rel="stylesheet" type="text/css">    
+
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<!-- start header -->
+		<header>
+                <div class="navbar navbar-default navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                            <img style="float: left;" src="{% static 'IMMP/img/zest.jpg' %}">
+                            <a class="navbar-brand" href="/index">Zest Smart Solutions Pvt. Ltd.<br>
+                                <p><span style="font-size: 15px;">DIPP Startup Certificate Recognition No:DIPP552</span></p>
+                            </a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/index">Home</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">About Us <b class=" icon-angle-down"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/team">Team</a></li>
+                                        <li><a href="/contact">Contact Us</a></li>
+                                        <li><a href="/faq">FAQ</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active"><a href="/projects">Projects</a></li>
+                                <li><a href="/members">Members</a></li>
+                                {% if user.is_authenticated %}
+                                    <li><a href="/accounts/logout">Log out</a></li>
+                                    <li><a href="/dashboard">My Dashboard</a></li>
+                                {% else %}
+                                    <li><a href="/accounts/login">Log In</a></li>
+                                    <!-- <li><a href="/signup">Sign Up</a></li> -->
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- end header -->
+		<section id="inner-headline">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<ul class="breadcrumb">
+							<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+							<li class="active">Projects</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<ul class="portfolio-categ filter">
+							<li class="all active"><a href="#">All</a></li>
+							<li class="completed"><a href="#">Completed</a></li>
+							<li class="process"><a href="#" title="">In Process</a></li>
+						</ul>
+						<div class="clearfix">
+						</div>
+						<div class="row">
+							<section id="projects">
+								<ul id="thumbs" class="portfolio">
+									<!-- Item Project and Filter Name -->
+									
+                                    <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="completed" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+                                                    <!-- Thumb Image and Description -->
+                                                    <img src="{% static 'IMMP/img/works/5.jpg' %}">
+                                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                
+                                                <!-- Thumb Image and Description -->
+                                                
+                                                <p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+										
+											</div>
+									</li>
+									
+                                    <!-- End Item Project -->
+                                    
+									<!-- Item Project and Filter Name -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="process" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										        <p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<!-- Item Project and Filter Name -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-2" data-type="completed" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<!-- Item Project and Filter Name -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="completed" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<!-- Item Project and Filter Name -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-4" data-type="process" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<!-- Item Project and Filter Name -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="process" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="completed" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="process" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="process" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="completed" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="completed" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Project Name</strong></p>
+                                                <p><a href="#">Details</a></p>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="contrib" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Name Here</strong></p>
+										<p><strong>Positions of responsibility</strong></p>
+										<a href="https://www.facebook.com"><img src="{% static 'IMMP/img/fb.png' %}" style="width: 15%; height: 10%; float:center;"></a>
+										<a href="https://www.linkedin.com"><img src="{% static 'IMMP/img/linkedin.png' %}" style="width: 15%; height: 10%;"></a>
+											</div>
+									</li>
+									<!-- End Item Project -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="contrib" style='text-align:center;'>
+											<div style='text-align:center;'>
+										
+											<!-- Thumb Image and Description -->
+											<img src="{% static 'IMMP/img/works/5.jpg' %}">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+										
+										<!-- Thumb Image and Description -->
+										
+										<p><strong>Name Here</strong></p>
+										<p><strong>Positions of responsibility</strong></p>
+										<a href="https://www.facebook.com"><img src="{% static 'IMMP/img/fb.png' %}" style="width: 15%; height: 10%; float:center;"></a>
+										<a href="https://www.linkedin.com"><img src="{% static 'IMMP/img/linkedin.png' %}" style="width: 15%; height: 10%;"></a>
+											</div>
+									</li>
+									<!-- End Item Project -->
+
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+	<!-- javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- <script src="js/jquery.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.fancybox.pack.js"></script>
+	<script src="js/jquery.fancybox-media.js"></script>
+	<script src="js/google-code-prettify/prettify.js"></script>
+	<script src="js/portfolio/jquery.quicksand.js"></script>
+	<script src="js/portfolio/setting.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
+	<script src="js/animate.js"></script>
+    <script src="js/custom.js"></script> -->
+    <script src="{% static 'IMMP/js/jquery.js' %}"></script>
+	<script src="{% static 'IMMP/js/jquery_easing.js' %}"></script>
+	<!-- <script src="{% static 'IMMP/js/flexslider/jquery-flexslider.js' %}"></script> -->
+	<script src="{% static 'IMMP/js/bootstrap-min.js' %}"></script>
+	<script src="{% static 'IMMP/js/jquery-fancybox.pack.js' %}"></script>
+	<script src="{% static 'IMMP/js/jquery-fancybox-media.js' %}"></script>
+	<script src="{% static 'IMMP/js/google-code-prettify/prettify.js' %}"></script>
+	<script src="{% static 'IMMP/js/portfolio/jquery-quicksand.js' %}"></script>
+	<script src="{% static 'IMMP/js/portfolio/setting.js' %}"></script>
+	<script src="{% static 'IMMP/js/jquery-flexslider.js' %}"></script>
+	<script src="{% static 'IMMP/js/animate.js' %}"></script>
+	<script src="{% static 'IMMP/js/custom.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -29,10 +29,13 @@
       <div class="clearfix"></div>
 
       <div class="row">
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="x_panel">
+        {% for product in products %}
+          
+            <div class="col-md-4 col-sm-6 col-xs-12">
+          
+            <div class="x_panel">
             <div class="x_title">
-              <h2>Project 1</h2>
+              <h2>{{ product.project_name }}</h2>
               <ul class="nav navbar-right panel_toolbox">
                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 </li>
@@ -49,10 +52,13 @@
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
-              <canvas id="lineChart"></canvas>
+              
+              <p>Description-{{ product.description }}</p><br>
+              <p>{{ product.skills }}</p><br>
             </div>
           </div>
-        </div>
+          </div>
+        {% endfor %}
       </div>
       <div class="clearfix"></div>
       <br />

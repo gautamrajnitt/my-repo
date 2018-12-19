@@ -1,4 +1,9 @@
 from django.db import models
+import os
+import datetime
+from django.utils.timezone import utc
+
+now = datetime.datetime.utcnow().replace(tzinfo=utc)
 
 class product(models.Model):
     objects=models.Manager()
@@ -10,3 +15,6 @@ class product(models.Model):
     
     def __str__(self):
         return self.project_name
+    def filename(self):
+        return os.path.basename(self.document.name)
+     

@@ -5,6 +5,9 @@
 {% block stylesheets %}
   {{ block.super }}
   <!-- Ion.RangeSlider -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="/static/vendors/normalize-css/normalize.css" rel="stylesheet">
   <link href="/static/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
   <link href="/static/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
@@ -61,68 +64,103 @@
             </div>
             <div class="x_content">
               <br>
-              <form class="form-horizontal form-label-left" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">Your Name</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" name="username" value={{ user.username }} disabled="disabled">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">Project Name</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" name="project_name">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">Description</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" name="description">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">Skills required</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" name="skills">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                  </div>
-                </div>
+                <form class="form-horizontal form-label-left" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
                   <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Upload files</label>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Your Name</label>
                     <div class="col-md-9 col-sm-9 col-xs-9">
-                      <input type="file" class="form-control" name="document">
+                      <input type="text" class="form-control" name="username" value={{ user.username }} disabled="disabled">
                       <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                     </div>
                   </div>
-                
-                <!-- <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">Upload Images</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" name="image">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Project Name</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" name="project_name">
+                      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div>
                   </div>
-                </div> -->
-                <!-- <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3"></label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" data-inputmask="'mask' : '9999-9999-9999-9999'">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Description</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" name="description">
+                      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div>
                   </div>
-                </div> -->
-                <div class="ln_solid"></div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Skills required</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" name="skills">
+                      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3">Upload files</label>
+                      <div class="col-md-9 col-sm-9 col-xs-9">
+                        <input type="file" class="form-control" name="document">
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                    <!-- {% if messages %}
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Status</label>
+                        <div class="col-md-9 col-sm-9 col-xs-9">
+                            {% for message in messages %}
+                            <p {% if message.tags %} class="{{ message.tags}}"{% endif %}>{{ message }}</p>
+                            {% endfor %}
+                          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                      </div>
+                    {% endif %} -->
+                  
+                  <!-- <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Upload Images</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" name="image">
+                      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div>
+                  </div> -->
+                  <!-- <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3"></label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" data-inputmask="'mask' : '9999-9999-9999-9999'">
+                      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div>
+                  </div> -->
+                  <div class="ln_solid"></div>
 
-                <div class="form-group">
-                  <div class="col-md-9 col-md-offset-3">
-                    <button type="submit" class="btn btn-primary">Cancel</button>
-                    <button type="reset" class="btn btn-success">Submit</button>
+                  <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3">
+                      <button type="reset" class="btn btn-primary">Cancel</button>
+                      <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
                   </div>
-                </div>
 
-              </form>
+                </form>
+                    <div class="x_content">
+                        <br>
+                        {% if product_id %}
+                              <table>
+                                  <tr>
+                                      <td>Posted By</td>
+                                      <td>{{ product.id }}</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Title</td>
+                                    <td>{{ product.project_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>{{ product.description }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Skills</td>
+                                    <td>{{ product.skills }}</td>
+                                </tr>
+                              </table>
+                              {% endif %}
+                      </div>
+              
             </div>
           </div>
         </div>
@@ -167,8 +205,7 @@
                         <td>{{ product.project_name }}</td>
                         <td>{{ product.description }}</td>
                         <td>{{ product.skills }}</td>
-                        <td><a href="/dashboard/details">Click here for details</a></td>
-                        <td></td>
+                        <td><a href="/dashboard/details/{{ product.id }}" >Click here for details</a></td>                        
                       </tr>
                   {% endfor %}
                 </tbody>

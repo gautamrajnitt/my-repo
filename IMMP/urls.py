@@ -10,8 +10,8 @@ urlpatterns = [
     path('team', views.team, name='team'),
     path('contact', views.contact, name='contact'),
     path('faq', views.faq, name='faq'),
-    path('signup', views.signup, name='signup'),
-    path('profile', views.profile, name='profile'),
+    # path('signup', views.signup, name='signup'),
+    path('profile/', views.profile, name='profile'),
     path('newproject', views.newproject, name='newproject'),
     path('dashboard/', appviews.index, name='dashboard'),
 ]

@@ -7,13 +7,14 @@ from . import views
 
 urlpatterns = [
     # Matches any html file - to be used for gentella
-    # Avoid using your .html in your resources.
+    # Avoid using your .html in your resources
     # Or create a separate django app.
     #path('', views.gentella_html, name='gentella'),
 
     # The home page
-    path('projects/', views.project_list, name='project_list'),
-    path('details/', views.details, name='details'),
+    path('projects/all/', views.media_gallery, name='media_gallery'),
+    path('projects/liked/', views.liked_projects, name='liked_projects'),
+    path('details/<int:product_id>/', views.details, name='details'),
     path('projects/upload/', views.upload_project, name='upload_project'),
 ]
 
