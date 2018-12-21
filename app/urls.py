@@ -16,6 +16,7 @@ urlpatterns = [
     path('projects/liked/', views.liked_projects, name='liked_projects'),
     path('details/<int:product_id>/', views.details, name='details'),
     path('projects/upload/', views.upload_project, name='upload_project'),
+    path('skills/', views.skills, name='skills'),
 ]
 
 if settings.DEBUG:

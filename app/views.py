@@ -82,3 +82,7 @@ def upload_project(request):
 @login_required
 def profile(request):
     return render(request, 'app/profile.html')
+
+@login_required
+def skills(request):
+    return render(request, 'app/skills.html')
