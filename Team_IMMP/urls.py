@@ -24,8 +24,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),    
     path('index.html', include('IMMP.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+<<<<<<< HEAD
     path('', include('IMMP.urls')),
     path('signup/',views.signup, name="signup"),
+=======
+    path('profile/', include('app.urls')),
+    path('dashboard/', include('app.urls')),
+    path('', include('IMMP.urls')),
+>>>>>>> 4bbc383de6b7246f1c1dbeb19a3a2dd10d7aa388
 ]
 
 if settings.DEBUG:
