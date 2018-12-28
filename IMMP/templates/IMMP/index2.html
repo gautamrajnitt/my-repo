@@ -1,0 +1,742 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Team IMMP</title>
+	
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/bootstrap.min.css' %}" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/owl.carousel.css' %}" />
+	<link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/owl.theme.default.css' %}" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/magnific-popup.css' %}" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="{% static 'IMMP/css2/font-awesome.min.css' %}">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/style.css' %}" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('/static/IMMP/img2/background1.jpg');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container" style="width: 100%;">
+
+				<div class="navbar-header"  style="margin-left: 0px;">
+					<!-- Logo -->
+					<div class="navbar-brand"  style="margin-left: 0px;">
+						<a href="/index2">
+							<h2 class="white-text">teamIMMP</h2>
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					{% if user.is_authenticated %}
+						<li><a href="/accounts/logout/" style="background-color: rgba(0,0,0,0);
+							color: white;
+							padding: 10px 25px;
+							border-radius: 8px;
+							border-color: white;
+							border: 2px solid;
+							text-decoration: none;
+							display: inline-block;
+							font-size: 20px">
+							Log out</a></li>
+				</ul>
+					{% else %}
+						<li><a href="/accounts/login/" style="background-color: rgba(0,0,0,0);
+							color: white;
+							padding: 10px 25px;
+							border-radius: 8px;
+							border-color: white;
+							border: 2px solid;
+							text-decoration: none;
+							display: inline-block;
+							font-size: 20px">
+							Log In</a></li>
+					</ul>
+				<!-- /Main navigation -->
+					{% endif %}
+			</div>
+		</nav>
+		<!-- /Nav -->
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<div class="container">
+				<div class="row">
+
+					<!-- home content -->
+					<div class="col-md-10 col-md-offset-1">
+						<div class="home-content">
+							<h2 class="white-text">A dedicated team building platform</h2>
+							<h4 class="white-text">Got a skill? | Got an Idea?</h4>
+							{% if user.is_authenticated %}
+								{% if user.username == 'zest' %}
+									<a href="/admin-dashboard/" class="white-btn">Admin's Dashboard</a>
+								{% else %}
+									<a href="/dashboard/" class="white-btn">Dashboard</a>
+								{% endif %}
+							{% else %}
+								<a href="" class="white-btn" data-target="#signUp" data-toggle="modal">Join the team</a>
+							{% endif %}
+						</div>
+					</div>
+					<!-- /home content -->
+
+				</div>
+			</div>
+		</div>
+		<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	<!-- About -->
+	<div id="about" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+			<div class="page-header">
+				<h1 id="timeline">How this network works?</h1>
+			</div>
+			<ul class="timeline">
+				<li>
+				  <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">1. Invite</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>We forward the IMMP
+						presentation for
+						inviting members to
+						the team
+						All members on board
+						can invite
+						Will be using a
+						registration form.
+						Acquiring details about
+						possessed skill sets</p>
+					</div>
+				  </div>
+				</li>
+				<li class="timeline-inverted">
+				  <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">Evaluate</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>Invited members will
+						be interviewed about
+						the depth and
+						experience relating to
+						each skill set
+						Links to past
+						experience and
+						attached documents to
+						be added to profile</p>
+					</div>
+				  </div>
+				</li>
+				<li>
+				  <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">Add to board</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>Once the user is added
+						to the network, he/she
+						can view and opt for
+						projects posted on the
+						board
+						Member can add a
+						description and
+						mention about current
+						interests and
+						availability on profile</p>
+					</div>
+				  </div>
+				</li>
+				<li class="timeline-inverted">
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">Assign</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>Interested members
+						being assigned to the
+						project
+						This may happen by
+						selection by the project
+						owner
+						Core team and
+						mentors may be
+						consulted</p>
+					</div>
+				  </div>
+				</li>
+				<li>
+				  <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">Feedback &
+						Rating</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>Feedback gained by
+						project owner will be
+						displayed with the
+						member profile
+						This will ase quality
+						control and further
+						recruitment</p>
+					  <hr>
+					</div>
+				  </div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /About -->
+
+	<!-- Numbers -->
+	<div id="numbers" class="section sm-padding">
+
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('/static/IMMP/img2/background2.jpg');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Container -->
+		<div class="container">
+			<div class="page-header">
+				<h1 id="timeline" class="white-text">Project flow</h1>
+			</div>
+			<ul class="timeline">
+				<li>
+				  <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+						<h4 class="timeline-title">1</h4>
+					</div>
+					<div class="timeline-body">
+					  <p class="white-text">Idea/Project proposal
+						[Internal or external]</p>
+					</div>
+				  </div>
+				</li>
+				<li class="timeline-inverted">
+				  <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+						<h4 class="timeline-title">2</h4>
+					</div>
+					<div class="timeline-body">
+					  <p class="white-text">Evaluation and
+						validation by zest core
+						team</p>
+					</div>
+				  </div>
+				</li>
+				<li>
+				  <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">3</h4>
+					</div>
+					<div class="timeline-body">
+					  <p class="white-text">Publishing on IMMP
+						board and inviting
+						members</p>
+					</div>
+				  </div>
+				</li>
+				<li class="timeline-inverted">
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">4</h4>
+					</div>
+					<div class="timeline-body">
+					  <p class="white-text">Team formation,
+						assigning duties &
+						setting up milestones</p>
+					</div>
+				  </div>
+				</li>
+				<li>
+				  <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">5</h4>
+					</div>
+					<div class="timeline-body">
+					  <p class="white-text">Checking progress and
+						delivery</p>
+					  
+					</div>
+				  </div>
+				</li>
+				<li class="timeline-inverted">
+					<div class="timeline-panel">
+					  <div class="timeline-heading">
+						<h4 class="timeline-title">6</h4>
+					  </div>
+					  <div class="timeline-body">
+						<p class="white-text">Feedback</p>
+					  </div>
+					</div>
+				  </li>
+			</ul>
+		</div>
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Pricing -->
+	<!-- Testimonial -->
+	<div id="testimonial" class="section md-padding">
+
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('/static/IMMP/img2/background2.jpg');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Testimonial slider -->
+				<div class="col-md-10 col-md-offset-1">
+					<div id="testimonial-slider" class="owl-carousel owl-theme">
+
+						<!-- testimonial -->
+						<div class="testimonial">
+							<div class="testimonial-meta">
+								<img src="./img/perso1.jpg" alt="">
+								<h3 class="white-text">John Doe</h3>
+								<span>Web Designer</span>
+							</div>
+							<p class="white-text">Molestie at elementum eu facilisis sed odio. Scelerisque in dictum non consectetur a erat. Aliquam id diam maecenas ultricies mi eget mauris.</p>
+						</div>
+						<!-- /testimonial -->
+
+						<!-- testimonial -->
+						<div class="testimonial">
+							<div class="testimonial-meta">
+								<img src="./img/perso2.jpg" alt="">
+								<h3 class="white-text">John Doe</h3>
+								<span>Web Designer</span>
+							</div>
+							<p class="white-text">Molestie at elementum eu facilisis sed odio. Scelerisque in dictum non consectetur a erat. Aliquam id diam maecenas ultricies mi eget mauris.</p>
+						</div>
+						<!-- /testimonial -->
+
+					</div>
+				</div>
+				<!-- /Testimonial slider -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Testimonial -->
+
+	<!-- Team -->
+	<div id="team" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Our Team</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- team -->
+				<div class="col-sm-4">
+					<div class="team">
+						<div class="team-img">
+							<img class="img-responsive" src="./img/team1.jpg" alt="">
+							<div class="overlay">
+								<div class="team-social">
+									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-google-plus"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="team-content">
+							<h3>John Doe</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
+				<!-- /team -->
+
+				<!-- team -->
+				<div class="col-sm-4">
+					<div class="team">
+						<div class="team-img">
+							<img class="img-responsive" src="./img/team2.jpg" alt="">
+							<div class="overlay">
+								<div class="team-social">
+									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-google-plus"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="team-content">
+							<h3>John Doe</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
+				<!-- /team -->
+
+				<!-- team -->
+				<div class="col-sm-4">
+					<div class="team">
+						<div class="team-img">
+							<img class="img-responsive" src="./img/team3.jpg" alt="">
+							<div class="overlay">
+								<div class="team-social">
+									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-google-plus"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="team-content">
+							<h3>John Doe</h3>
+							<span>Web Designer</span>
+						</div>
+					</div>
+				</div>
+				<!-- /team -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Team -->
+
+	<!-- Blog -->
+	<div id="blog" class="section md-padding bg-grey">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Recents news</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- blog -->
+				<div class="col-md-4">
+					<div class="blog">
+						<div class="blog-img">
+							<img class="img-responsive" src="./img/blog1.jpg" alt="">
+						</div>
+						<div class="blog-content">
+							<ul class="blog-meta">
+								<li><i class="fa fa-user"></i>John doe</li>
+								<li><i class="fa fa-clock-o"></i>18 Oct</li>
+								<li><i class="fa fa-comments"></i>57</li>
+							</ul>
+							<h3>Molestie at elementum eu facilisis sed odio</h3>
+							<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+							<a href="blog-single.html">Read more</a>
+						</div>
+					</div>
+				</div>
+				<!-- /blog -->
+
+				<!-- blog -->
+				<div class="col-md-4">
+					<div class="blog">
+						<div class="blog-img">
+							<img class="img-responsive" src="./img/blog2.jpg" alt="">
+						</div>
+						<div class="blog-content">
+							<ul class="blog-meta">
+								<li><i class="fa fa-user"></i>John doe</li>
+								<li><i class="fa fa-clock-o"></i>18 Oct</li>
+								<li><i class="fa fa-comments"></i>57</li>
+							</ul>
+							<h3>Molestie at elementum eu facilisis sed odio</h3>
+							<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+							<a href="blog-single.html">Read more</a>
+						</div>
+					</div>
+				</div>
+				<!-- /blog -->
+
+				<!-- blog -->
+				<div class="col-md-4">
+					<div class="blog">
+						<div class="blog-img">
+							<img class="img-responsive"  src="./img/blog3.jpg" alt="">
+						</div>
+						<div class="blog-content">
+							<ul class="blog-meta">
+								<li><i class="fa fa-user"></i>John doe</li>
+								<li><i class="fa fa-clock-o"></i>18 Oct</li>
+								<li><i class="fa fa-comments"></i>57</li>
+							</ul>
+							<h3>Molestie at elementum eu facilisis sed odio</h3>
+							<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+							<a href="blog-single.html">Read more</a>
+						</div>
+					</div>
+				</div>
+				<!-- /blog -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Blog -->
+
+	<!-- Contact -->
+	<div id="contact" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section-header -->
+				<div class="section-header text-center">
+					<h2 class="title">Get in touch</h2>
+				</div>
+				<!-- /Section-header -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-phone"></i>
+						<h3>Phone</h3>
+						<p>512-421-3940</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-envelope"></i>
+						<h3>Email</h3>
+						<p>email@support.com</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-map-marker"></i>
+						<h3>Address</h3>
+						<p>1739 Bubby Drive</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact form -->
+				<div class="col-md-8 col-md-offset-2">
+					<form class="contact-form">
+						<input type="text" class="input" placeholder="Name">
+						<input type="email" class="input" placeholder="Email">
+						<input type="text" class="input" placeholder="Subject">
+						<textarea class="input" placeholder="Message"></textarea>
+						<button class="main-btn">Send message</button>
+					</form>
+				</div>
+				<!-- /contact form -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Contact -->
+
+
+	<!-- Footer -->
+	<footer id="footer" class="sm-padding bg-dark">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<!-- footer logo -->
+					<div class="footer-logo">
+						<a href="/index2"><img src="{% static 'IMMP/img2/logo-alt.png" alt="logo"></a>
+					</div>
+					<!-- /footer logo -->
+
+					<!-- footer follow -->
+					<ul class="footer-follow">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+					<!-- /footer follow -->
+
+					<!-- footer copyright -->
+					<div class="footer-copyright">
+						<p>Copyright © 2017. All Rights Reserved. Designed by <a href="/index2" target="_blank">Zest Smart Solutions Pvt. Ltd.</a></p>
+					</div>
+					<!-- /footer copyright -->
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</footer>
+	<!-- /Footer -->
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- /Preloader -->
+
+	<script type="text/javascript" src="{% static 'IMMP/js2/timeline.min.js' %}"></script>
+	<script>
+		timeline(document.querySelectorAll('.timeline'), {
+			forceVerticalMode: 700,
+			mode: 'horizontal',
+			verticalStartPosition: 'left',
+			visibleItems: 4
+		});
+	</script>
+
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36251023-1']);
+		_gaq.push(['_setDomainName', 'jqueryscript.net']);
+		_gaq.push(['_trackPageview']);
+	
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	
+	</script>
+	<div class="modal fade" id="signUp" data-keyboard="false" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Sign up</h4>
+					</div>
+					<div class="modal-body">
+							<form method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+								{{ form.as_p }}
+					</div>
+					<div class="modal-footer">
+							<button class="btn btn-primary" type="submit">Sign up</button>
+						<button class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="{% static 'IMMP/js2/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'IMMP/js2/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'IMMP/js2/owl.carousel.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'IMMP/js2/jquery.magnific-popup.js' %}"></script>
+	<script type="text/javascript" src="{% static 'IMMP/js2/main.js' %}"></script>
+
+</body>
+
+</html>

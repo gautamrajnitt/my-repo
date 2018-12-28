@@ -17,12 +17,16 @@ from django.contrib import admin
 from django.urls import include,path
 from IMMP import views
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),    
     path('index.html', include('IMMP.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('dashboard/', include('app.urls')),
     path('', include('IMMP.urls')),
-    
+    path('signup/',views.signup, name="signup"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

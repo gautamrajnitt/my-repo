@@ -41,13 +41,13 @@
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index">Home</a></li>
+							<li class="active"><a href="/index">Home</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">About Us <b class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="team">Team</a></li>
-									<li><a href="contact">Contact Us</a></li>
-									<li><a href="faq">FAQ</a></li>
+									<li><a href="/team">Team</a></li>
+									<li><a href="/contact">Contact Us</a></li>
+									<li><a href="/faq">FAQ</a></li>
 								</ul>
 							</li>
 							<li><a href="projects">Projects</a></li>
@@ -57,7 +57,7 @@
 							    <li><a href="/dashboard">Dashboard</a></li>
 							{% else %}
 							    <li><a href="/accounts/login">Log In</a></li>
-							    <li><a href="/signup">Sign Up</a></li>
+							    <!-- <li><a href="/signup">Sign Up</a></li> -->
 							{% endif %}
 						</ul>
 					</div>
@@ -72,37 +72,16 @@
 
 									<div class="w3-display-container mySlides">
 									<img src="{% static 'IMMP/img/slides/1.jpg' %}" style="width:100%">
-									<div class="w3-display-middle w3-large w3-container w3-padding-16">
-											<div class="cta-text">
-													<!-- <h2><span>Team IMMP</span></h2>
-													<br><h3>Idea:Market Research:MVP:Pitch</h3><br> -->
-													<button class="postproject"><a href="/dashboard/upload_project">Post Project</a></button>
-											</div>
-									</div>
 									</div>
 
 									<div class="w3-display-container mySlides">
 									<img src="{% static 'IMMP/img/slides/2.jpg' %}" style="width:100%">
-									<div class="w3-display-middle w3-large w3-container w3-padding-16 ">
-										<div class="cta-text">
-											<!-- <h2>A dedicated product development platform</h2>
-											<br><h3>Find:Assign:Build:Manage:Test:Launch:Scale Up</h4> -->
-											<button class="postproject"><a href="/dashboard/upload_project">Post Project</a></button>
-									</div>
-									</div>
 									</div>
 
 									<div class="w3-display-container mySlides">
 									<img src="{% static 'IMMP/img/slides/3.jpg' %}" style="width:100%">
-									<div class="w3-display-middle w3-large w3-container w3-padding-16">
-										<div class="cta-text">
-											<!-- <h2>Let's Build!</h2><br>
-											<h3>A good team makes the work easy!</h3><br> -->
-											<button class="postproject"><a href="/dashboard/upload_project">Post Project</a></button>
 									</div>
-									</div>
-									</div>
-
+									
 									<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
 									<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
 								</div>
@@ -298,27 +277,6 @@
 		  x[slideIndex-1].style.display = "block";
 		}
 	</script>
-
-	  <!-- Modal -->
-	  <div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Login</h4>
-				</div>
-				<div class="modal-body">
-						<form method="post">
-							{% csrf_token %}
-							{{ from.as_p }}
-						</form>
-				</div>
-			</div>
-
-			</div>
-		</div>
 
 	<script src="{% static 'IMMP/js/jquery.js' %}"></script>
 	<script src="{% static 'IMMP/js/jquery_easing.js' %}"></script>

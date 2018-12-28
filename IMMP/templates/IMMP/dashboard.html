@@ -1,0 +1,253 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            
+                <title>Dashboard</title>
+                
+                <!-- Google font -->
+                <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+            
+                <!-- Bootstrap -->
+                <link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/bootstrap.min.css' %}" />
+            
+                <!-- Owl Carousel -->
+                <link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/owl.carousel.css' %}" />
+                <link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/owl.theme.default.css' %}" />
+            
+                <!-- Magnific Popup -->
+                <link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/magnific-popup.css' %}" />
+            
+                <!-- Font Awesome Icon -->
+                <link rel="stylesheet" href="{% static 'IMMP/css2/font-awesome.min.css' %}">
+            
+                <!-- Custom stlylesheet -->
+                <link type="text/css" rel="stylesheet" href="{% static 'IMMP/css2/style.css' %}" />
+            
+                <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                <!--[if lt IE 9]>
+                    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+                    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+                <![endif]-->
+        <style>
+            
+
+            .box {
+            box-sizing: border-box;
+            margin: 1px;
+            }
+            
+            
+            /* Create three equal columns that floats next to each other */
+            .boxcolumn {
+            float: left;
+            margin: 5px;
+            width: 32%;
+            padding: 10px;
+            height: 310px; /* Should be removed. Only for demonstration */
+            }
+
+            /* Clear floats after the columns */
+            .boxrow:after {
+            content: "";
+            display: table;
+            clear: both;
+            padding: 5px;
+            }
+
+            /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+            .box {
+                box-sizing: border-box;
+                margin: 15px;
+            }
+            .boxcolumn {
+                float: left;
+                padding: 10px;
+                width: 100%;
+                border-radius: 10px;
+                height: 310px; /* Should be removed. Only for demonstration */
+            }
+            }
+        </style>
+    </head>
+    <body style="background-color: rgb(37, 37, 37);">
+        <header id="home">
+                
+            <nav id="nav" class="navbar nav-transparent">
+
+                    <div class="container" style="width: 100%;">
+        
+                        <div class="navbar-header"  style="margin-left: 0px;">
+                            <!-- Logo -->
+                            <div class="navbar-brand"  style="margin-left: 0px;">
+                                <a href="/index2">
+                                    <h2 class="white-text">teamIMMP</h2>
+                                </a>
+                            </div>
+                            <!-- /Logo -->
+        
+                            <!-- Collapse nav button -->
+                            <div class="nav-collapse">
+                                <span></span>
+                            </div>
+                            <!-- /Collapse nav button -->
+                        </div>
+        
+                        <!--  Main navigation  -->
+                        <ul class="main-nav nav navbar-nav navbar-right">
+                            <li><a href="/accounts/logout/" style="background-color: rgba(0,0,0,0);
+                                color: white;
+                                padding: 10px 25px;
+                                border-radius: 8px;
+                                border-color: white;
+                                border: 2px solid;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 20px">
+                                Log out</a></li>
+                        </ul>
+                        <!-- /Main navigation -->
+        
+                    </div>
+            </nav>
+                    <div class="container">
+                                <div class="box">
+                  
+                                    <div class="boxrow">
+                                        <div class="boxcolumn" style="background-color:#aaa;">
+                                            <div>
+                                                <img src="{% static 'IMMP/img/avatar.png' %}" style="border-radius: 8px; float: left; padding-right: 5px;">
+                                                <h3> {{ user.username }}</h3><br>
+                                                <p>{{ user.tagline }}</p>
+                                            </div>
+                                                <div>
+                                                    <p>Skills: _totalCount_</p>
+                                                    <ul>
+                                                        <li>{{ user.skills1 }}</li>
+                                                        <li>{{ user.skills1 }}</li>
+                                                        <li>{{ user.skills1 }}</li>
+                                                        <li>{{ user.skills1 }}</li>
+                                                        <li>{{ user.skills1 }}</li>
+                                                    </ul>
+                                                
+                                                    <div>
+                                                        <p>Badges: _totalCount_</p>
+                                                        <ul>
+                                                            <li>{{ user.skills1 }}</li>
+                                                            <li>{{ user.skills1 }}</li>
+                                                            <li>{{ user.skills1 }}</li>
+                                                            <li>{{ user.skills1 }}</li>
+                                                            <li>{{ user.skills1 }}</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            
+                                        </div>
+                                        <div class="boxcolumn" style="background-color:#bbb;">
+                                            <h2>People</h2>
+                                            
+                                            <p>Some text..</p>
+                                        </div>
+                                        <div class="boxcolumn" style="background-color:#ccc;">
+                                            <h2>Post/Manage Projects</h2>
+                                            <p><a href="" data-target="#post" data-toggle="modal">Post Projects</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="boxrow">
+                                        <div class="boxcolumn" style="background-color:#aaa;">
+                                            <h2>Associations</h2>
+                                            <p>Some text..</p>
+                                        </div>
+                                        <div class="boxcolumn" style="background-color:#bbb;">
+                                            <h2>Projects</h2>
+                                            <p>Some text...</p>
+                                        </div>
+                                        <div class="boxcolumn" style="background-color:#ccc;">
+                                            <h2>Updates</h2>
+                                            <p>Some text..</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                    </div>
+                <!-- /home wrapper -->
+        
+            </header>
+    
+        <!-- Back to top -->
+        <div id="back-to-top"></div>
+        <!-- /Back to top -->
+    
+        <!-- Preloader -->
+        <div id="preloader">
+            <div class="preloader">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- /Preloader -->
+    
+        <script type="text/javascript" src="{% static 'IMMP/js2/timeline.min.js' %}"></script>
+        <script>
+            timeline(document.querySelectorAll('.timeline'), {
+                forceVerticalMode: 700,
+                mode: 'horizontal',
+                verticalStartPosition: 'left',
+                visibleItems: 4
+            });
+        </script>
+    
+        <script type="text/javascript">
+    
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-36251023-1']);
+            _gaq.push(['_setDomainName', 'jqueryscript.net']);
+            _gaq.push(['_trackPageview']);
+        
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        
+        </script>
+
+<div class="modal fade" id="post" data-keyboard="false" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Project Details</h4>
+                </div>
+                <div class="modal-body">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit" value="submit">Sumbit</button>
+                    <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    
+        <!-- jQuery Plugins -->
+        <script type="text/javascript" src="{% static 'IMMP/js2/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'IMMP/js2/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'IMMP/js2/owl.carousel.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'IMMP/js2/jquery.magnific-popup.js' %}"></script>
+        <script type="text/javascript" src="{% static 'IMMP/js2/main.js' %}"></script>
+    
+    </body>
+</html>
